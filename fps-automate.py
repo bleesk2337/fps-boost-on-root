@@ -16,7 +16,7 @@ def decrypt_key(encoded_key, xor_key):
 
 GEMINI_API_KEY = decrypt_key(ENCRYPTED_KEY_B64, XOR_KEY)
 
-#  Диагностика устройства через ADB
+
 def get_device_info():
     try:
         cpu = subprocess.check_output(["adb", "shell", "cat", "/proc/cpuinfo"]).decode()
@@ -36,7 +36,7 @@ def get_device_info():
 {root_status}
 """
     except Exception as e:
-        return f" Ошибка при сборе данных: {e}"
+        return f" failee!: {e}"
 
 
 os.makedirs("logs", exist_ok=True)
@@ -59,11 +59,11 @@ echo "🚀 FPS BOOSTER v2 STARTED" > $LOG
 
 # Проверка root
 if [ "$(id -u)" -ne 0 ]; then
-  echo "❌ Требуется root!" >> $LOG
+  echo "❌ root root!" >> $LOG
   exit 1
 fi
 
-### === 1. ДО ОПТИМИЗАЦИИ ===
+
 echo "📊 BEFORE:" >> $LOG
 echo "Memory:" >> $LOG
 free -h >> $LOG
@@ -167,4 +167,4 @@ os.makedirs("results", exist_ok=True)
 with open("results/auto_boost.sh", "w", encoding="utf-8") as f:
     f.write(sh_code)
 
-print(" Скрипт сохранён: results/auto_boost.sh")
+print(" Скрипт сохранён/script saved: results/auto_boost.sh")
